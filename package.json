@@ -1,0 +1,55 @@
+{
+  "name": "@runxhq/n8n-nodes-runx",
+  "version": "0.0.0",
+  "description": "n8n community node package for submitting governed runx skill runs and reading run receipts.",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "runx"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "runx",
+    "orchestrator",
+    "skills",
+    "receipts"
+  ],
+  "homepage": "https://github.com/runxhq/n8n-nodes-runx#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runxhq/n8n-nodes-runx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/runxhq/n8n-nodes-runx/issues"
+  },
+  "main": "dist/nodes/Runx/Runx.node.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-icons.mjs",
+    "lint": "n8n-node lint",
+    "dev": "n8n-node dev",
+    "prepack": "npm run build",
+    "release": "n8n-node release"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/RunxApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Runx/Runx.node.js"
+    ]
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.34.0",
+    "@types/node": "25.9.2",
+    "n8n-workflow": "2.16.0",
+    "typescript": "5.9.3"
+  }
+}
